@@ -33,6 +33,6 @@ $install_dir='/opt/minecraft'
   service {'minecraft':
     ensure => running,
     enable => true,
-    require => [Package['java',File["${install_dir}/eula.txt"],File['/etc/systemd/system/minecraft.service']],
+    require => [Package['jdk'],File["${install_dir}/eula.txt"],File['/etc/systemd/system/minecraft.service']],
   }
 }
